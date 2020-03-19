@@ -20,7 +20,7 @@ public class DestroyEnemy : MonoBehaviour
         if (other.gameObject.name == "Enemy(Clone)")
         {
             Destroy(other.gameObject);
-            PlayerController.score -= 1000;
+            PlayerStats.score -= 1000;
         }
     }
 }

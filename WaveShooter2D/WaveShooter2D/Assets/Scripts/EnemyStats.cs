@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour
+public class EnemyStats : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class HealthManager : MonoBehaviour
             Destroy(gameObject);
             Destroy(other.gameObject);
 
-            PlayerController.score += 250;
+            PlayerStats.score += 250;
         }
     }
 }
