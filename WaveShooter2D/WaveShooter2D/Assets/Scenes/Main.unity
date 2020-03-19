@@ -827,6 +827,7 @@ MonoBehaviour:
   pickupEffect: {fileID: 100006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
   projectile: {fileID: 224782500884104944, guid: 802a24fcd694834438efea3b7bc809fb,
     type: 3}
+  duration: 5
 --- !u!61 &1701404443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1090,7 +1091,7 @@ PrefabInstance:
     - target: {fileID: 2662273554070943121, guid: b0145080e29fb5246aa676c72cac6552,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2662273554070943122, guid: b0145080e29fb5246aa676c72cac6552,
         type: 3}
