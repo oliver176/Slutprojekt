@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int scoreToReceive = 250;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name == "PlayerProjectile(Clone)")
@@ -22,7 +13,7 @@ public class EnemyStats : MonoBehaviour
             Destroy(gameObject);
             Destroy(other.gameObject);
 
-            PlayerStats.score += 250;
+            PlayerStats.score += scoreToReceive;
         }
     }
 }

@@ -17,7 +17,7 @@ public class PowerUp : MonoBehaviour
             StartCoroutine(PickUp());
         }
     }
-    IEnumerator PickUp()
+    protected virtual IEnumerator PickUp()
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 

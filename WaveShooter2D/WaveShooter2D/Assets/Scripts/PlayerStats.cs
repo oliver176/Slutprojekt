@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //en offset så att projektilen inte spawnar i spelaren
         projectileOffset = projectile.GetComponent<MeshRenderer>().bounds.size.y / 2;
         timer -= Time.deltaTime;
 
