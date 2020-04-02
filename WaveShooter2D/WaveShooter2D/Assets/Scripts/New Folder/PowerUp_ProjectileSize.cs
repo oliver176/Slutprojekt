@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp_ProjectileSize : PowerUps
+public class PowerUp_ProjectileSize : PowerUp
 {
     public GameObject projectile;
 

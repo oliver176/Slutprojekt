@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -6,6 +7,11 @@ public class EnemySpawner : MonoBehaviour
     public float spawnrate;
     private float timer;
     private Vector3 startPos;
+
+    public GameObject spawnPoint1;
+    public GameObject spawnPoint2;
+    public GameObject spawnPoint3;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -20,7 +26,14 @@ public class EnemySpawner : MonoBehaviour
 
         if (timer <= 0)
         {
-            Instantiate(Enemy, startPos, Quaternion.identity);
+            var spawnPointsList = new List<GameObject>
+            {
+            spawnPoint1,
+            spawnPoint2,
+            spawnPoint3
+            };
+            //Instantiate(Enemy, startPos, Quaternion.identity);
+            Instantiate(Enemy, spawnPointsList[Random.Range(0, 3)].transform.position, Quaternion.identity);
             timer = spawnrate;
         }
     }

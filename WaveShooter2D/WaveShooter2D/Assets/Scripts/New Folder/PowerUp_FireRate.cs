@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp_FireRate : PowerUps
+public class PowerUp_FireRate : PowerUp
 {
     PlayerStats statScript;
     public float multiplier;

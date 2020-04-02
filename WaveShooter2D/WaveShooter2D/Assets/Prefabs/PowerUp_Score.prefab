@@ -118,6 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bc9e8ab60305d4599fcf1862790e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 0}
-  projectile: {fileID: 0}
+  pickupEffect: {fileID: 100006, guid: 5124dc2491c482e45ac7dd914d77ddc6, type: 3}
   duration: 5
+  enemy: {fileID: 8666132506796359539, guid: 1b4ba53bda29c044ebbbd05e9ad53305, type: 3}

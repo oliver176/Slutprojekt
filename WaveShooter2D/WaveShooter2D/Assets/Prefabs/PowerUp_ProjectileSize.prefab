@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f30a350c6651b9429a1272069811377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 0}
-  projectile: {fileID: 0}
+  pickupEffect: {fileID: 100004, guid: 96536afb634b32043bb988d4576053d3, type: 3}
   duration: 5
+  projectile: {fileID: 224782500884104944, guid: 802a24fcd694834438efea3b7bc809fb,
+    type: 3}

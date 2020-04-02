@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EventSystem : MonoBehaviour
 {
-    public GameObject powerUp;
     float counter;
     public float powerUpSpawnRate;
 
@@ -12,12 +11,13 @@ public class EventSystem : MonoBehaviour
     MeshCollider spawnArea;
     Vector3 spawnPoint;
 
+    public GameObject powerUp_fireRate;
+    public GameObject powerUp_projectileSize;
+    public GameObject powerUp_scoreMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {
-        List<PowerUps> powerUpList = new List<PowerUps>();
-
-
         spawnArea = playArea.GetComponent<MeshCollider>();
         spawnPoint = spawnArea.bounds.size;  //hitta storleken av meshcollidern
     }
@@ -33,7 +33,14 @@ public class EventSystem : MonoBehaviour
             spawnPoint = new Vector3(Random.Range(-spawnArea.bounds.size.x / 2, spawnArea.bounds.size.x / 2),
                                      Random.Range(-spawnArea.bounds.size.y / 2, spawnArea.bounds.size.y / 2), 0);
 
-            Instantiate(powerUp, spawnPoint, Quaternion.identity);
+            var powerUpList = new List<GameObject>
+        {
+            powerUp_fireRate,
+            powerUp_projectileSize,
+            powerUp_scoreMultiplier
+        };
+
+            Instantiate(powerUpList[Random.Range(0, powerUpList.Count)], spawnPoint, Quaternion.identity);
             counter += powerUpSpawnRate;
         }
     }

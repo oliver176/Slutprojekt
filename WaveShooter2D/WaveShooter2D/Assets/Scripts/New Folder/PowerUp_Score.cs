@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp_Score : PowerUps
+public class PowerUp_Score : PowerUp
 {
     public GameObject enemy;
     EnemyStats scoreScript;
