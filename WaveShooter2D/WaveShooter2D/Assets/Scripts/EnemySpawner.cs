@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject spawnPoint1;
     public GameObject spawnPoint2;
     public GameObject spawnPoint3;
+    public GameObject spawnPoint4;
 
 
     // Start is called before the first frame update
@@ -30,7 +31,8 @@ public class EnemySpawner : MonoBehaviour
             {
             spawnPoint1,
             spawnPoint2,
-            spawnPoint3
+            spawnPoint3,
+            spawnPoint4
             };
             //Instantiate(Enemy, startPos, Quaternion.identity);
             Instantiate(Enemy, spawnPointsList[Random.Range(0, 3)].transform.position, Quaternion.identity);

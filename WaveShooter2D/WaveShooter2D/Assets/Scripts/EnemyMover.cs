@@ -7,6 +7,7 @@ public class EnemyMover : MonoBehaviour
     public GameObject player;
     public float speed;
     private Vector3 startPos;
+    private Vector3 currentPos;
     public GameObject EnemySpawner;
     private float counter;
 
@@ -14,6 +15,7 @@ public class EnemyMover : MonoBehaviour
     void Start()
     {
         startPos = transform.position; // Där fienden ska instansieras
+        currentPos = transform.position;
     }
 
     // Update is called once per frame
@@ -28,18 +30,22 @@ public class EnemyMover : MonoBehaviour
 
         if (startPos.x <= 0)
         {
-            startPos.x += 0.03f;
+            //startPos.x += 0.03f;
+            currentPos.x += 0.02f;
+
         }
         else if (startPos.x >= 0)
         {
-            startPos.x -= 0.03f;
+            //startPos.x -= 0.03f;
+            currentPos.x -= 0.02f;
         }     
 
-        startPos.y -= 0.03f;
-        
+        //startPos.y -= 0.03f;
+        currentPos.y -= 0.03f;
+
         //startPos.y = startPos.x + Mathf.Sin(startPos.x); //Flytta också fienden 
-       
-        transform.localPosition = new Vector3(startPos.x, startPos.y, 0f);
+
+        transform.localPosition = new Vector3(currentPos.x, currentPos.y, 0f);
 
     }
 }
