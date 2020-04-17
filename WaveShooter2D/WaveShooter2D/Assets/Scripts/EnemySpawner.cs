@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (timer <= 0)
         {
+            //Lista av spawnpoints
             var spawnPointsList = new List<GameObject>
             {
             spawnPoint1,
@@ -34,8 +35,10 @@ public class EnemySpawner : MonoBehaviour
             spawnPoint3,
             spawnPoint4
             };
-            //Instantiate(Enemy, startPos, Quaternion.identity);
+
+            //Spawna en enemy på en av spawnPoint objekten
             Instantiate(Enemy, spawnPointsList[Random.Range(0, 3)].transform.position, Quaternion.identity);
+            //Reset timer
             timer = spawnrate;
         }
     }

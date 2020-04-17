@@ -18,6 +18,7 @@ public class DestroyProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //Collision med spelaren skott, destroy.
         if (other.gameObject.name == "PlayerProjectile(Clone)")
         {
             Destroy(other.gameObject);

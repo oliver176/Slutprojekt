@@ -10,11 +10,13 @@ public class PowerUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        //När spelaren colliderar med powerUp
         if (other.CompareTag("Player"))
         {
             StartCoroutine(PickUp());
         }
     }
+    //Spawna en pickupeffekt och disabla poweruppen, destroy efter 5 sekunder
     protected virtual IEnumerator PickUp()
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);

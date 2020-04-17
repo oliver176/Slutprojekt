@@ -14,37 +14,36 @@ public class EnemyMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position; // Där fienden ska instansieras
+        //Variabler som representerar fiendens position
+        startPos = transform.position; 
         currentPos = transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //y = 2sin((ysqrt(3))/2) + xsqrt3
-        //y = x + sin(x)
+        /*Counter som sinus funktionen använder sig av
+        counter += Time.deltaTime; 
 
-        //counter += Time.deltaTime; //Counter som sinus funktionen använder sig av
+        Flyttar på fienden i en sinus kurva i x-led
+        transform.localPosition = currentPos + new Vector3(Mathf.Sin(counter * speed), 0f, 0f); */
 
-        //transform.localPosition = startPos + new Vector3(Mathf.Sin(counter * speed), 0f, 0f); //Flyttar på fienden i en sinus kurva i x-led
 
+        //Om fienden spawnar vänster om mitten rör den sig åt höger
         if (startPos.x <= 0)
         {
-            //startPos.x += 0.03f;
             currentPos.x += 0.02f;
 
         }
+        //Om fienden spawnar höger om mitten rör den sig åt vänster
         else if (startPos.x >= 0)
         {
-            //startPos.x -= 0.03f;
             currentPos.x -= 0.02f;
         }     
-
-        //startPos.y -= 0.03f;
+        //Flytta fienden ner 
         currentPos.y -= 0.03f;
 
-        //startPos.y = startPos.x + Mathf.Sin(startPos.x); //Flytta också fienden 
-
+        //Flytta fienden till den nya positionen
         transform.localPosition = new Vector3(currentPos.x, currentPos.y, 0f);
 
     }

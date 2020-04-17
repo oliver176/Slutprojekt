@@ -6,13 +6,16 @@ public class EnemyStats : MonoBehaviour
 {
     public int scoreToReceive = 250;
 
-    private void OnCollisionEnter2D(Collision2D other)
+
+
+    void OnCollisionEnter2D(Collision2D other)
     {
+        //Om fienden träffas av spelarens skott ge spelaren score
         if (other.gameObject.name == "PlayerProjectile(Clone)")
         {
-            Destroy(gameObject);
             Destroy(other.gameObject);
 
+            Destroy(gameObject);
             PlayerStats.score += scoreToReceive;
         }
     }

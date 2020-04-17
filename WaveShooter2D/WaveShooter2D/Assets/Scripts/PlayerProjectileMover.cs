@@ -16,6 +16,7 @@ public class PlayerProjectileMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Flytta projektilen fram/upp
         Vector2 movement = new Vector2(0, 1) * Time.deltaTime * speed;
         transform.Translate(movement);
     }

@@ -9,7 +9,7 @@ public class EventSystem : MonoBehaviour
 
     public GameObject playArea;
     MeshCollider spawnArea;
-    Vector3 spawnPoint;
+    Vector3 spawnPoints;
 
     public GameObject powerUp_fireRate;
     public GameObject powerUp_projectileSize;
@@ -19,7 +19,7 @@ public class EventSystem : MonoBehaviour
     void Start()
     {
         spawnArea = playArea.GetComponent<MeshCollider>();
-        spawnPoint = spawnArea.bounds.size;  //hitta storleken av meshcollidern
+        spawnPoints = spawnArea.bounds.size;  //hitta storleken av meshcollidern
     }
 
     // Update is called once per frame
@@ -30,17 +30,18 @@ public class EventSystem : MonoBehaviour
         if (counter < 0)
         {
             //spawna inom arean av banan, de är delade på 2 eftersom att mitten av banan är (0, 0)
-            spawnPoint = new Vector3(Random.Range(-spawnArea.bounds.size.x / 2, spawnArea.bounds.size.x / 2),
+            spawnPoints = new Vector3(Random.Range(-spawnArea.bounds.size.x / 2, spawnArea.bounds.size.x / 2),
                                      Random.Range(-spawnArea.bounds.size.y / 2, spawnArea.bounds.size.y / 2), 0);
 
             var powerUpList = new List<GameObject>
-        {
+            {
             powerUp_fireRate,
             powerUp_projectileSize,
             powerUp_scoreMultiplier
-        };
+            };
 
-            Instantiate(powerUpList[Random.Range(0, powerUpList.Count)], spawnPoint, Quaternion.identity);
+            //spawna en powerup
+            Instantiate(powerUpList[Random.Range(0, powerUpList.Count)], spawnPoints, Quaternion.identity);
             counter += powerUpSpawnRate;
         }
     }

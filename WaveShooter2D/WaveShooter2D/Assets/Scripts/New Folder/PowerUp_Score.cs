@@ -17,6 +17,7 @@ public class PowerUp_Score : PowerUp
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
+        // En score multiplier
         scoreScript.scoreToReceive *= 2;
 
         GetComponent<BoxCollider2D>().enabled = false;
@@ -24,6 +25,7 @@ public class PowerUp_Score : PowerUp
 
         yield return new WaitForSeconds(duration);
 
+        //Ta bort score multiplier
         scoreScript.scoreToReceive /= 2;
 
         Destroy(gameObject);

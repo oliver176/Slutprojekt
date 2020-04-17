@@ -17,6 +17,8 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*Sätter storleken på projektilen, fanns en bug om du tog en powerup som gjorde projektilerna större
+                                            och sedan quitta spelet var projektilen forfarande stor.*/
         projectile.transform.localScale = new Vector3(0.3f, 0.3f, 1);
     }
 

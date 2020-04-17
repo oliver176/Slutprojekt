@@ -8,13 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float speed = 3;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
+        //movement för spelaren
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 

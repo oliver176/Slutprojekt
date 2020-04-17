@@ -19,6 +19,7 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Uppdatera score texten som displayas.
         textTodisplay = string.Format(scoreText, PlayerStats.score);
 
         displayText.text = textTodisplay;
